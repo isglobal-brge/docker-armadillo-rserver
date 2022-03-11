@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pr:
+- main
+
+jobs:  
+  - job: DockerPipeline 
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Bash@3
+      displayName: Check, build and release images
+      inputs:
+        filePath: .azure/build_docker.bash
+      env:
+        DOCKERHUB_AUTH: $(DOCKERHUB_AUTH)
+        GITHUB_TOKEN: $(GITHUB_TOKEN)
+        
