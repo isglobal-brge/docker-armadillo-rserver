@@ -12,8 +12,12 @@ ENV RESOURCER_VERSION "1.1.1"
 RUN install2.r --error httr --repos "https://cloud.r-project.org/"
 RUN install2.r --error "https://cloud.r-project.org/src/contrib/resourcer_${RESOURCER_VERSION}.tar.gz" --repos NULL
 
+# Install dsBase package
+ENV DS_DEP_VERSION "6.1.1"
+RUN installGithub.r "datashield/dsBase@${DS_DEP_VERSION}}" --deps=TRUE
+
 # Install dsOmics package
-ENV DSOMICS_VERSION "v1.0.7"
-RUN installGithub.r "isglobal-brge/dsOmics@${DSOMICS_VERSION}" --deps=TRUE
+ENV DS_PKG_VERSION "v1.0.7"
+RUN installGithub.r "isglobal-brge/dsOmics@${DS_PKG_VERSION}" --deps=TRUE
 
 CMD R -e "MolgenisRserve::Rserve(debug=${DEBUG}, args='--vanilla --RS-set remote=enable --RS-set auth=disable --RS-set daemon=disable')"
