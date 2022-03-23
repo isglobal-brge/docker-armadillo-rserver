@@ -15,7 +15,7 @@ ENV DS_DEP_VERSION "6.1.1"
 RUN installGithub.r "datashield/dsBase@${DS_DEP_VERSION}"
 
 # Install dsExposome package
-ENV DS_PKG_VERSION "2.0.1"
+ENV DS_PKG_VERSION "2.0.2"
 RUN installGithub.r "isglobal-brge/dsExposome@${DS_PKG_VERSION}"
 
 CMD R -e "MolgenisRserve::Rserve(debug=${DEBUG}, args='--vanilla --RS-set remote=enable --RS-set auth=disable --RS-set daemon=disable')"
