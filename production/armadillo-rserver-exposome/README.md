@@ -4,7 +4,7 @@ The DataSHIELD RServer has installed collections of tools to support DataSHIELD 
 
 ## Contents
 There are several DataSHIELD related dependencies installed
-- [dsExposome](https://github.com/isglobal-brge/dsExposome/tree/v1.0.1)=1.0.1
+- [dsExposome](https://github.com/isglobal-brge/dsExposome)
 ## Usage
 There are several platforms on which you can run RServer.
 
