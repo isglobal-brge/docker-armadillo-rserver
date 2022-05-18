@@ -5,8 +5,24 @@ The DataSHIELD RServer has installed collections of tools to support DataSHIELD 
 ## Contents
 There are several DataSHIELD related dependencies installed
 - [dsExposome](https://github.com/isglobal-brge/dsExposome)
+
 ## Usage
 There are several platforms on which you can run RServer.
+
+## Build
+To build the docker images you need to execute this command:
+
+```bash
+docker build . -t brgelab/armadillo-rserver-exposome:*major-version* -t brgelab/armadillo-rserver-exposome:latest -t brgelab/armadillo-rserver-exposome:*tag*
+# example
+docker build . -t brgelab/armadillo-rserver-exposome:2 -t brgelab/armadillo-rserver-exposome:latest -t brgelab/armadillo-rserver-exposome:2.0.4
+```
+
+## Release
+You can push the images to dockerhub using `docker push`.
+
+`docker push brgelab/armadillo-rserver-exposome --all-tags`
+
 
 ### Deploy locally
 You can steer the rserver at runtime using environment variables. You can toggle debug mode with the environment variable `DEBUG`.
