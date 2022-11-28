@@ -22,7 +22,7 @@ ENV DS_DEP_VERSION "6.1.1"
 RUN installGithub.r "datashield/dsBase@${DS_DEP_VERSION}" --deps=TRUE
 
 # Install dsOmics package
-ENV DS_PKG_VERSION "1.0.8"
+ENV DS_PKG_VERSION "v1.0.17"
 RUN installGithub.r "isglobal-brge/dsOmics@${DS_PKG_VERSION}" --deps=TRUE
 
 CMD R -e "MolgenisRserve::Rserve(debug=${DEBUG}, args='--vanilla --RS-set remote=enable --RS-set auth=disable --RS-set daemon=disable')"
